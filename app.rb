@@ -3,17 +3,17 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 require './models'
 
+enable :sessions
 # Database configuration
 set :database, "sqlite3:development.sqlite3"
 
 # Helper Methods
 def current_user
-  @user ||= User.find_by_id(session[:user_id])
+  @current_user ||=User.find_by_id(session[:user_id])
 end
 
 def authenticate_user
-  @user = current_user
-  redirect '/' if current_user.nil?
+  redirect '/signUp' if current_user.nil?
 end
 
 # Define routes below
@@ -23,6 +23,8 @@ end
 
 # Define User ID
 get '/users/:id' do
+  authenticate_user
+  @user = current_user
   @user = User.find_by_id(params[:id])
   erb :'users/accountInfo'
 end
@@ -37,7 +39,11 @@ get '/contact' do
 end
 
 get '/signUp' do
+  if current_user
+    redirect "/users/#{current_user.id}"
+  else
   erb :'users/signUp'
+  end
 end
 
 post '/signUp' do
@@ -55,12 +61,18 @@ post '/signUp' do
 end
 
 get '/login' do
+  if current_user
+    redirect "/users/#{current_user.id}"
+  else
   erb :'users/login'
+  end
 end
 
 post '/login' do
   username = params[:username]
-  user = User.find_or_create_by(username: username)
+  password = params[:password]
+  user = User.find_by(username: username, password: password)
+  redirect '/login' if user.nil || username.nil || password.nil?
   session[:user_id] = user.id
   redirect "users/#{user.id}"
 end
