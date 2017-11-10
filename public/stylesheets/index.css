@@ -3,32 +3,24 @@
 }
 /* image slide show */
 .slideshow {
-  float: left;
+  float: right;
   display: block;
   width: 800px;
   height: 450px;
   margin: 0 auto;
   overflow: hidden;
-  border: 6px solid #3D5A6C;
+  border: 6px solid red;
 
 }
 
 .slideshow-container {
   width: 3200px;
   font-size: 0;
-  transition: 1s ease;
-  height: 425px;
+  height: 300px;
 }
 
-.slideshow-container:hover {
-  animation-play-state: paused;
-}
 
-#SL {
+.SS {
   width: 800px;
-  height: auto;
-}
-
-.slide {
-  animation: slide 24s ease infinite;
+  height: 500px;
 }
