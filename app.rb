@@ -21,12 +21,6 @@ get '/' do
   erb :index
 end
 
-# Define User
-get '/users' do
-  @users = User.all
-  erb :'users/index'
-end
-
 # Define User ID
 get '/users/:id' do
   @user = User.find_by_id(params[:id])
@@ -35,7 +29,7 @@ end
 
 get '/pageContent' do
   @user = User.find_by_id(params[:id])
-  erb :'users/pageContent'
+  erb :'pageContent'
 end
 
 get '/contact' do
@@ -61,13 +55,17 @@ post '/signUp' do
 end
 
 get '/login' do
-  @user = current_user
   erb :'users/login'
 end
 
 post '/login' do
-  username = params[:username].downcase
+  username = params[:username]
   user = User.find_or_create_by(username: username)
   session[:user_id] = user.id
-  redirect "users/pageContent"
+  redirect "users/#{user.id}"
+end
+
+get '/logout' do
+  session.clear
+  redirect '/'
 end
