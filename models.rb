@@ -4,6 +4,5 @@
 # representations of your database tables. All classes defined
 # here must inherit from ActiveRecord::Base
 
-# e.g.
-# class User < ActiveRecord::Base
-# end
+ class User < ActiveRecord::Base
+ end
