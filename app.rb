@@ -8,7 +8,7 @@ set :database, "sqlite3:development.sqlite3"
 
 # Helper Methods
 def current_user
-  User.find_by_id(session[:user_id])
+  @user ||= User.find_by_id(session[:user_id])
 end
 
 def authenticate_user
@@ -30,11 +30,12 @@ end
 # Define User ID
 get '/users/:id' do
   @user = User.find_by_id(params[:id])
-  erb :'user/accountInfo'
+  erb :'users/accountInfo'
 end
 
 get '/pageContent' do
-  erb :'pageContent'
+  @user = User.find_by_id(params[:id])
+  erb :'users/pageContent'
 end
 
 get '/contact' do
@@ -60,15 +61,13 @@ post '/signUp' do
 end
 
 get '/login' do
+  @user = current_user
   erb :'users/login'
 end
 
 post '/login' do
   username = params[:username].downcase
-  password = params[:password].downcase
-  user = User.find_or_create_by(
-    username: username,
-    password: password)
+  user = User.find_or_create_by(username: username)
   session[:user_id] = user.id
-  redirect "/"
+  redirect "users/pageContent"
 end
