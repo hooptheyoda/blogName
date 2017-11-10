@@ -5,7 +5,7 @@
 .slideshow {
   float: right;
   display: block;
-  width: 800px;
+  width: 1260px;
   height: 450px;
   margin: 0 auto;
   overflow: hidden;
@@ -21,6 +21,6 @@
 
 
 .SS {
-  width: 800px;
-  height: 500px;
+  width: 1260px;
+  height: 470px;
 }
