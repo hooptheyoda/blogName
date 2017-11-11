@@ -21,6 +21,29 @@ get '/' do
   erb :index
 end
 
+get '/signUp' do
+  if current_user
+    redirect "/users/#{current_user.id}"
+  else
+  erb :'users/signUp'
+  end
+end
+
+post '/signUp' do
+  f_name = params[:f_name]
+  l_name = params[:l_name]
+  username = params[:username]
+  email = params[:email]
+  user = User.create(
+    f_name: f_name,
+    l_name: l_name,
+    username: username,
+    email: email)
+
+  session[:user_id] = user.id
+  redirect "/users/#{current_user.id}"
+end
+
 # Define User ID
 get '/users/:id' do
   authenticate_user
@@ -38,27 +61,6 @@ get '/contact' do
   erb :'contact'
 end
 
-get '/signUp' do
-  if current_user
-    redirect "/users/#{current_user.id}"
-  else
-  erb :'users/signUp'
-  end
-end
-
-post '/signUp' do
-  f_name = params[:f_name]
-  l_name = params[:l_name]
-  username = params[:username]
-  email = params[:email]
-  user = User.create_by(
-    f_name: f_name,
-    l_name: l_name,
-    username: username,
-    email: email)
-  session[:user_id] = user.id
-  redirect "/"
-end
 
 get '/login' do
   if current_user
@@ -82,4 +84,28 @@ end
 get '/logout' do
   session.clear
   redirect '/'
+end
+
+delete '/users/:id' do
+  user = User.find_by_id(params[:id])
+  user.destroy
+  redirect '/'
+end
+
+patch '/users/:id' do
+  user = User.find_by_id(params[:id])
+  user.update(
+    f_name: params[:f_name],
+    l_name: params[:l_name],
+    username: params[:username],
+    password: params[:password],
+    email: params[:email]
+  )
+  redirect "/users/#{current_user.id}"
+end
+
+# user edit route
+get '/users/:id/edit' do
+  @user = User.find_by_id(params[:id])
+  erb :'users/edit'
 end

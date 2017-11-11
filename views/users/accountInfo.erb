@@ -1,3 +1,16 @@
 <h1>Account Information</h1>
 
-<h2>Hi <%= @user.username %></h2>
+  <p>User ID: <%= @user.id %></p>
+  <p>First Name: <%= @user.f_name %></p>
+  <p>Last Name: <%= @user.l_name %></p>
+  <p>Username: <%= @user.username %></p>
+  <p>Password: <%= @user.password %></p>
+  <p>Email: <%= @user.email %></p>
+
+<br />
+<button><a href="/users/<%= @user.id %>/edit" style="text-decoration:none">Edit Information</a></button>
+<br />
+<br />
+<button onclick="alert('Are you sure you want to delete your Profile?')">
+  <a href="/delete" style="text-decoration:none">Delete Profile</a>
+</button>
