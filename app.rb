@@ -33,11 +33,13 @@ post '/signUp' do
   f_name = params[:f_name]
   l_name = params[:l_name]
   username = params[:username]
+  password = params[:password]
   email = params[:email]
   user = User.create(
     f_name: f_name,
     l_name: l_name,
     username: username,
+    password: password,
     email: email)
 
   session[:user_id] = user.id
@@ -101,6 +103,7 @@ patch '/users/:id' do
     password: params[:password],
     email: params[:email]
   )
+  session[:user_id] = user.id
   redirect "/users/#{current_user.id}"
 end
 
