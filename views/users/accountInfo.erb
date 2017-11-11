@@ -11,6 +11,8 @@
 <button><a href="/users/<%= @user.id %>/edit" style="text-decoration:none">Edit Information</a></button>
 <br />
 <br />
-<button onclick="alert('Are you sure you want to delete your Profile?')">
-  <a href="/delete" style="text-decoration:none">Delete Profile</a>
-</button>
+
+  <form action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Destroy" onclick="confirm()">
+  </form>

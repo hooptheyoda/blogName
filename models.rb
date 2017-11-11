@@ -6,6 +6,7 @@
 
  class User < ActiveRecord::Base
    has_many :comments
+   # validates :f_name, presence: true
  end
 
  class Comment < ActiveRecord::Base

@@ -5,8 +5,7 @@
 # e.g.
 #
 User.destroy_all
-user = User.create(
-  f_name: 'Bobby',
+user = User.create(f_name: 'Bobby',
 l_name: 'McBobberson',
 username: 'bob',
 password: 'x',
