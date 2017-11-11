@@ -47,11 +47,11 @@ get '/signUp' do
 end
 
 post '/signUp' do
-  f_name = params[:f_name].downcase
-  l_name = params[:l_name].downcase
-  username = params[:username].downcase
-  email = params[:email].downcase
-  user = User.find_or_create_by(
+  f_name = params[:f_name]
+  l_name = params[:l_name]
+  username = params[:username]
+  email = params[:email]
+  user = User.create_by(
     f_name: f_name,
     l_name: l_name,
     username: username,
@@ -72,7 +72,7 @@ post '/login' do
   username = params[:username]
   password = params[:password]
   user = User.find_by(username: username, password: password)
-  redirect '/login' if user.nil? 
+  redirect '/login' if user.nil?
   redirect '/login' if username.nil?
   redirect '/login' if password.nil?
   session[:user_id] = user.id
