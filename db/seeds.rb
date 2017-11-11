@@ -3,9 +3,22 @@
 # in the command line after running migrations (rake db:migrate)
 
 # e.g.
-# User.create(f_name: 'Bobby', l_name: 'McBobberson')
+
 User.destroy_all
-user = User.create(username: 'bob', password: 'x')
+User.create(f_name: 'Bobby',
+l_name: 'McBobberson',
+username: 'bob',
+password: 'x',
+email: 'bm@example.com')
 
+User.create(f_name: 'Nanny',
+l_name: 'Elevator',
+username: 'El',
+password: 'x',
+email: 'elb@example.com')
 
-# l_name: 'McBobberson', username: 'bob', email: 'somethingemail', password: 'x')
+User.create(f_name: 'Jane',
+l_name: 'Doe',
+username: 'jane',
+password: 'j',
+email: 'jane@example.com')

@@ -5,4 +5,10 @@
 # here must inherit from ActiveRecord::Base
 
  class User < ActiveRecord::Base
+   has_many :comments
+   # validates :f_name, presence: true
+ end
+
+ class Comment < ActiveRecord::Base
+   belongs_to :user
  end
