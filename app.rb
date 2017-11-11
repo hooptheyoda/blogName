@@ -72,7 +72,9 @@ post '/login' do
   username = params[:username]
   password = params[:password]
   user = User.find_by(username: username, password: password)
-  redirect '/login' if user.nil || username.nil || password.nil?
+  redirect '/login' if user.nil? 
+  redirect '/login' if username.nil?
+  redirect '/login' if password.nil?
   session[:user_id] = user.id
   redirect "users/#{user.id}"
 end
