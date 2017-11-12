@@ -5,7 +5,7 @@
 .slideshow {
   float: right;
   display: block;
-  width: 800px;
+  width: 1800px;
   height: 450px;
   margin: 0 auto;
   overflow: hidden;
@@ -14,13 +14,46 @@
 }
 
 .slideshow-container {
-  width: 3200px;
+  width: 700px;
   font-size: 0;
-  height: 300px;
+  height: 20px;
 }
 
 
 .SS {
-  width: 800px;
-  height: 500px;
+  width: 1800px;
+  height: 450px;
 }
+
+
+body {
+  margin: 40px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px 300px;
+  grid-template-areas:
+  " header header header header header";
+
+
+  grid-gap: 20px;
+  background-color: #fff;
+  color: #444;
+  justify-content: center;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 15px;
+  padding: 100px;
+  font-size: 150%;
+}
+
+.header {
+       grid-area: header;
+       grid-template-columns: 500px;
+       background-color: #999;
+
+   }
