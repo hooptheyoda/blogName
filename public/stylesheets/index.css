@@ -1,6 +1,12 @@
 * {
   box-sizing: border-box;
 }
+body {
+  margin: 40px;
+  background-image: url("../img/Gamers Talk Bravo!.jpg");
+ background-repeat: no-repeat;
+ background-color: black;
+}
 /* image slide show */
 .slideshow {
   float: right;
@@ -25,7 +31,7 @@
   height: 450px;
 }
 
-
+/* css grid */
 body {
   margin: 40px;
 }
@@ -38,7 +44,7 @@ body {
 
 
   grid-gap: 20px;
-  background-color: #fff;
+  background-color: black;
   color: #444;
   justify-content: center;
 }
@@ -55,5 +61,7 @@ body {
        grid-area: header;
        grid-template-columns: 500px;
        background-color: #999;
+       font-size: 200%;
+      text-align: center;
 
    }
