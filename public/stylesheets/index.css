@@ -61,10 +61,13 @@ body {
 
 .header {
        grid-area: header;
-       grid-template-columns: 500px;
+       grid-template-columns: 50px;
        background-color: #999;
-       font-size: 200%;
+       font-size: 300%;
       text-align: center;
+      height: 50px;
+      color: #e6c300;
+
  }
 
  @media screen and (max-width: 992px) {
