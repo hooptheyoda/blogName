@@ -16,6 +16,8 @@ def authenticate_user
   redirect '/signUp' if current_user.nil?
 end
 
+
+
 # Define routes below
 get '/' do
   erb :index
@@ -54,10 +56,21 @@ get '/users/:id' do
   erb :'users/accountInfo'
 end
 
+post '/pageContent' do
+  @comment
+erb :'pageContent'
+end
+
+
 get '/pageContent' do
-  @user = User.find_by_id(params[:id])
+  @comments = Comment.all
   erb :'pageContent'
 end
+
+get '/users/:id'  do
+   @comment = Comment.find_by_id(params[:id])
+   erb :'pageContent'
+ end
 
 get '/contact' do
   erb :'contact'
