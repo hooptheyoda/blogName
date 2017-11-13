@@ -2,32 +2,35 @@
   box-sizing: border-box;
 }
 body {
-  margin: 40px;
+  margin: 20px;
   background-image: url("../img/Gamers Talk Bravo!.jpg");
- background-repeat: no-repeat;
- background-color: black;
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: center top;
+  background-size: 1250px 1050px;
+  color: #ffbd4a;
 }
 /* image slide show */
 .slideshow {
   float: right;
   display: block;
-  width: 1800px;
+  width: 1200px;
   height: 450px;
   margin: 0 auto;
   overflow: hidden;
-  border: 6px solid red;
+  border: 6px solid #ffbd4a;
 
 }
 
 .slideshow-container {
-  width: 700px;
+  width: 600px;
   font-size: 0;
   height: 20px;
 }
 
 
 .SS {
-  width: 1800px;
+  width: 1200px;
   height: 450px;
 }
 
@@ -38,7 +41,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 300px 300px 300px 300px 300px;
+  grid-template-columns: 200px 200px 200px 200px 200px;
   grid-template-areas:
   " header header header header header";
 
@@ -50,18 +53,38 @@ body {
 }
 
 .box {
-  background-color: #444;
-  color: #fff;
+  background-color: #ffbd4a;
+  color: black;
   border-radius: 15px;
   padding: 100px;
   font-size: 150%;
 }
 
 .header {
-       grid-area: header;
-       grid-template-columns: 500px;
-       background-color: #999;
-       font-size: 200%;
-      text-align: center;
+  grid-area: header;
+  grid-template-columns: 50px;
+  background-color: #ffbd4a;
+  font-size: 300%;
+  text-align: center;
+  height: 50px;
+  color: black;
 
+ }
+
+ @media screen and (max-width: 992px) {
+ .btn {
+   background-color: green;
+ }
+}
+
+ @media screen and (max-width: 768px) {
+   .btn {
+    background-color: purple;
    }
+ }
+
+@media screen and (max-width: 480px) {
+ .btn {
+   background-color: red;
+ }
+}
