@@ -17,7 +17,7 @@ background-size: 1250px 1050px;
   height: 450px;
   margin: 0 auto;
   overflow: hidden;
-  border: 6px solid red;
+  border: 6px solid #ffbd4a;
 
 }
 
@@ -52,8 +52,8 @@ body {
 }
 
 .box {
-  background-color: #444;
-  color: #fff;
+  background-color: #ffbd4a;
+  color: black;
   border-radius: 15px;
   padding: 100px;
   font-size: 150%;
@@ -62,11 +62,11 @@ body {
 .header {
        grid-area: header;
        grid-template-columns: 50px;
-       background-color: #999;
+       background-color: #ffbd4a;
        font-size: 300%;
       text-align: center;
       height: 50px;
-      color: #e6c300;
+      color: black;
 
  }
 
