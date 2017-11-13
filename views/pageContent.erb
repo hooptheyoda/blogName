@@ -1,7 +1,8 @@
 <h1>Page Content</h1>
 <ul>
-<li><%= %></li>
-
+  <% @comments.each do |comment| %>
+<li><%= comment.comment %></li>
+<%end %>
 </ul>
 <h2>To Comment Login or Sign Up</h2>
 <button> <a href="/signUp">Sign Up</a></button>
