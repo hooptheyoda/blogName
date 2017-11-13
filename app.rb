@@ -18,6 +18,7 @@ end
 
 
 
+
 # Define routes below
 get '/' do
   erb :index
@@ -44,7 +45,7 @@ post '/signUp' do
     password: password,
     email: email)
 
-  session[:user_id] = user.id
+ session[:user_id] = user.id
   redirect "/users/#{current_user.id}"
 end
 
@@ -57,13 +58,13 @@ get '/users/:id' do
 end
 
 post '/pageContent' do
-  @comment
-erb :'pageContent'
+  @comment = Comment.create(comment: params[:textBox])
+redirect :'pageContent'
 end
 
 
 get '/pageContent' do
-  @comments = Comment.all
+    @comments = Comment.all
   erb :'pageContent'
 end
 
