@@ -1,7 +1,9 @@
 <h1>Page Content</h1>
 <body id="body">
-<h3>XBOX</h3>
+
+<h3>PLAYSTATION & XBOX  & PC </h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<br>
 <ul>
 <% @comments.each do |comment| %>
 <li id='list'><%= comment.comment %></li>
@@ -21,59 +23,4 @@
 <button class="button"> <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
 <button class="button"> <a href="/login" style="text-decoration:none">Login</a></button>
 <% end %>
-
-<br />
-<h3>PC CONSOLE</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<ul>
-<% @comments.each do |comment| %>
-<li id='list'><%= comment.comment %></li>
-<br>
-<%end %>
-</ul>
-<% if session[:user_id] %>
-<form action="/pageContent" method="post" >
-<textarea name="textBox" placeholder="less than 150 characters" rows="8" cols="80"></textarea>
-<br />
-<input type="submit" value="submit">
-</form>
-<button class="button hidden"> <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
-<button class="button hidden"> <a href="/login" style="text-decoration:none">Login</a></button>
-<% else %>
-<h2>To Comment Login or Sign Up</h2>
-<button class="button"> <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
-<button class="button"> <a href="/login" style="text-decoration:none">Login</a></button>
-<% end %>
-
-<br>
-<h3>PLAYSTATION</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<br>
-<ul>
-<% @comments.each do |comment| %>
-<li id='list'><%= comment.comment %></li>
-<br>
-<%end %>
-</ul>
-
-
-
-
-
-<% if session[:user_id] %>
-<form action="/pageContent" method="post" >
-<textarea name="textBox" placeholder="less than 150 characters" rows="8" cols="80"></textarea>
-<br />
-<input type="submit" value="submit">
-</form>
-<button class="button hidden"> <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
-<button class="button hidden"> <a href="/login" style="text-decoration:none">Login</a></button>
-<% else %>
-<h2>To Comment Login or Sign Up</h2>
-<button class="button"> <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
-<button class="button"> <a href="/login" style="text-decoration:none">Login</a></button>
-<% end %>
-
-
-
 </body>
