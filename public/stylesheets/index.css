@@ -6,13 +6,8 @@ ul {
 color: white;
 }
 
-header {
-  top: 0;
-  width: 100%;
-}
-
 body {
-  margin: 20px;
+  margin: 0 auto;
   background-image: url("../img/Gamers Talk Bravo!.jpg");
   background-repeat: no-repeat;
   background-color: black;
@@ -21,12 +16,25 @@ body {
   color: #ffbd4a;
 }
 
+header {
+  margin-top: 20px;
+  width: 100%;
+}
+
 .accInfo{
   margin-left: 40%;
 }
 
 button {
+  margin-left: 10px;
   background: linear-gradient(black,#f1f1f1);
+  border-radius: 4px;
+  padding: 12px;  
+}
+
+input[type=submit] {
+  background: linear-gradient(black,#f1f1f1);
+  color: #ffbd4a;
   border-radius: 4px;
   padding: 12px;
 }
@@ -36,8 +44,13 @@ button {
 }
 
  button:hover {
-    background-color: #ffbd4a;
+   background-color: #ffbd4a;
    box-shadow: 0 12px 16px 0 rgba(68, 68, 68, 0.6),0 17px 50px 0 rgba(68, 68, 68, 0.7);
+}
+
+input[type=submit]:hover {
+  background-color: #ffbd4a;
+  box-shadow: 0 12px 16px 0 rgba(68, 68, 68, 0.6),0 17px 50px 0 rgba(68, 68, 68, 0.7);
 }
 
 .meImg {
@@ -92,33 +105,17 @@ background-color: #f1f1f1;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+
 /* image slide show */
 .slideshow {
-  float: right;
   display: block;
-  width: 1200px;
-  height: 450px;
-  margin: 0 auto;
-  overflow: hidden;
-  border: 6px solid #ffbd4a;
-
+  width: 100%;
 }
-
-.slideshow-container {
-  width: 600px;
-  font-size: 0;
-  height: 20px;
-}
-
 
 .SS {
-  width: 1200px;
-  height: 450px;
-}
-
-/* css grid */
-body {
-  margin: 40px;
+  margin-top: 15px;
+  width: 100%;
+  max-height: 450px;
 }
 
 .wrapper {
@@ -142,7 +139,7 @@ body {
   font-size: 150%;
 }
 
-.header {
+.slideshow {
   grid-area: header;
   grid-template-columns: 50px;
   background-color: #ffbd4a;
@@ -150,26 +147,8 @@ body {
   text-align: center;
   height: 50px;
   color: black;
-
  }
+
  .hidden {
    display: none;
  }
-
- @media screen and (max-width: 992px) {
- .btn {
-   background-color: green;
- }
-}
-
- @media screen and (max-width: 768px) {
-   .btn {
-    background-color: purple;
-   }
- }
-
-@media screen and (max-width: 480px) {
- .btn {
-   background-color: red;
- }
-}
