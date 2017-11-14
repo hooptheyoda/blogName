@@ -7,24 +7,16 @@
   </head>
   <body>
     <header>
+      <nav>
         <button> <a href="/" style="text-decoration:none">Home</a></button>
         <button> <a href="/pageContent" style="text-decoration:none">Page Content</a></button>
         <button> <a href="/contact" style="text-decoration:none">Contact</a></button>
-        <% if session[:user_id] %>
-        <button class="button hidden"> <a href="/signUp" style="text-decoration:none ">Sign Up</a></button>
-        <button class="button hidden"> <a href="/login" style="text-decoration:none ">Login</a></button>
-        <li class="dropdown">
-          <a class="dropbtn"><img class="meImg" src="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg" id="photo" width="150" height="150"></a>
-          <div class="dropdown-content">
-            <a href="#">Settings</a>
-            <a href="#">Profile</a>
-            <a href="/logout">Logout</a>
-          </div>
-        </li>
-        <% else %>
-          <button class="button" > <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
-          <button class="button "> <a href="/login" style="text-decoration:none">Login</a></button>
-        <% end %>
+
+        <button> <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
+        <button> <a href="/login" style="text-decoration:none">Login</a></button>
+
+      </nav>
+      <a href="/logout">Logout</a>
     </header>
 
     <%= yield %>
