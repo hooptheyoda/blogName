@@ -1,13 +1,10 @@
 <h1>Page Content</h1>
-<ul  >
+<ul>  
 <% @comments.each do |comment| %>
 <li id='list'><%= comment.comment %></li>
 <br>
 <%end %>
 </ul>
-
-
-
 
 <h2>To Comment Login or Sign Up</h2>
 <button> <a href="/signUp">Sign Up</a></button>
@@ -15,10 +12,16 @@
 <br />
 <br />
 
+<% if session[:user_id] %>
 <form action="/pageContent" method="post" >
-<textarea name="textBox" placeholder="less than 99 characters" rows="8" cols="80" maxlength="100">>
-
-</textarea>
+<textarea name="textBox" placeholder="less than 150 characters" rows="8" cols="80"></textarea>
 <br />
 <input type="submit" value="submit">
 </form>
+<button class="button hidden"> <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
+<button class="button hidden"> <a href="/login" style="text-decoration:none">Login</a></button>
+<% else %>
+<h2>To Comment Login or Sign Up</h2>
+<button class="button"> <a href="/signUp" style="text-decoration:none">Sign Up</a></button>
+<button class="button"> <a href="/login" style="text-decoration:none">Login</a></button>
+<% end %>
