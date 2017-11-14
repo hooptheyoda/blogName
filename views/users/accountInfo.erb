@@ -1,3 +1,6 @@
+<div class="accInfo">
+
+
 <h1>Account Information</h1>
 
   <p>User ID: <%= @user.id %></p>
@@ -9,10 +12,13 @@
 
 <br />
 <button><a href="/users/<%= @user.id %>/edit" style="text-decoration:none">Edit Information</a></button>
+<button class="button" id="deleteProfile"><a style="text-decoration:none">Delete</a></button>
 <br />
 <br />
 
-  <button id="deleteProfile">Delete</button>
+
   <form id="deletePForm" action="/users/<%= @user.id %>" method="post">
   <input type="hidden" name="_method" value="delete" />
   </form>
+
+  </div>

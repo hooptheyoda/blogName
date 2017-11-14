@@ -16,9 +16,6 @@ def authenticate_user
   redirect '/signUp' if current_user.nil?
 end
 
-
-
-
 # Define routes below
 get '/' do
   erb :index
@@ -44,7 +41,19 @@ post '/signUp' do
     username: username,
     password: password,
     email: email)
-
+    # break if user.nil?
+    # break if user.nil?
+    # break if f_name.nil?
+    # break if l_name.nil?
+    # break if username.nil?
+    # break if password.nil?
+    # break if email.nil?
+     # if user.nil? break
+     # if f_name.nil?   break
+     # if l_name.nil?  break
+     # if username.nil? break
+     # if password.nil?  break
+     # if email.nil?  break
  session[:user_id] = user.id
   redirect "/users/#{current_user.id}"
 end
