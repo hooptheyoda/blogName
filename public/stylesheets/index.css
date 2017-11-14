@@ -178,11 +178,27 @@ body {
 
 
 
-#comunilust {
+#lust {
   border: 2px solid white;
 }
 
-#comunilist {
-border: 2px solid white;
+#list {
+border: 2px solid #ffcc00;
 border-radius: 5px;
+height: 20px;
+width: 950px;
+font-family: verdana;
+color: white;
+}
+
+
+#list:hover {
+color: white;
+height: 30px;
+width: 950px;
+border: 10px solid #ffbd4;
+border-radius: 25px;
+font-family: verdana;
+background-color: #229a9f;
+transition: 1s background-color ease-in-out;
 }
