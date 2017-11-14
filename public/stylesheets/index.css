@@ -16,6 +16,16 @@ body {
   color: #ffbd4a;
 }
 
+#OnlyForYouMyFriend {
+  margin: 0 auto;
+  background-image: url("../img/Gamers Talk Bravo2.jpg");
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: center top;
+  background-size: 1250px 1050px;
+  color: #ffbd4a;
+}
+
 header {
   margin-top: 20px;
   width: 100%;
@@ -161,12 +171,12 @@ border-radius: 15px;
 }
 
 #list {
-border: 2px solid #ffcc00;
-border-radius: 5px;
+
 height: 20px;
 width: 950px;
 font-family: verdana;
 color: white;
+background-color: #229a9f;
 }
 
 
@@ -174,8 +184,7 @@ color: white;
 color: white;
 height: 30px;
 width: 950px;
-border: 10px solid #ffbd4;
-border-radius: 25px;
+
 font-family: verdana;
 background-color: #229a9f;
 transition: 1s background-color ease-in-out;
