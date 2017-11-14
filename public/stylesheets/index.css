@@ -122,6 +122,8 @@ body {
 }
 
 .wrapper {
+  border:2px solid red;
+  margin-top: 300px;
   display: grid;
   grid-template-columns: 200px 200px 200px 200px 200px;
   grid-template-areas:

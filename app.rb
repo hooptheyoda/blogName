@@ -18,6 +18,7 @@ end
 
 # Define routes below
 get '/' do
+  @comments = Comment.all
   erb :index
 end
 

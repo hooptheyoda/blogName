@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-
 
   <style>
   .mySlides {display:none;}
@@ -27,65 +19,13 @@
           </div>
         </section>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
   <div class="wrapper">
-    <div class="box header">Latest Posts</div>
-    <div class="box a">A</div>
-    <div class="box b">B</div>
-    <div class="box c">C</div>
-    <div class="box d">D</div>
-    <div class="box e">E</div>
-    <div class="box f">F</div>
-    <div class="box f">G</div>
-    <div class="box f">H</div>
-    <div class="box f">I</div>
-    <div class="box f">J</div>
-  </div>
+      <div class="box header">Latest Posts</div>
+      <% @comments.all.each.with_index do |c, i| %>
+          <% if (i < 10) %>
+            <div class="box"><%= c.comment %></div>
+          <% end %>
 
-
-</body>
-
-</html>
+     <% end %>
+    </div>
