@@ -1,7 +1,4 @@
 
-  <style>
-  .mySlides {display:none;}
-  </style>
 
   <title>Document</title>
 </head>
@@ -18,10 +15,9 @@
           </div>
   </section>
 
-
   <div class="wrapper">
-      <div class="box header">Latest Posts</div>
-      <% @comments.all.each.with_index do |c, i| %>
+    <div class="hb">Latest Posts</div>
+    <% @comments.all.each.with_index do |c, i| %>
           <% if (i < 10) %>
             <div class="box"><%= c.comment %></div>
           <% end %>
