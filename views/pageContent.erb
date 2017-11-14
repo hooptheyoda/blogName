@@ -13,8 +13,11 @@
 <br />
 <input type="submit" value="submit">
 </form>
-<ul>
-  <% @comments.each do |comment| %>
-<li><%= comment.comment %></li>
+
+
+<ul  >
+<% @comments.each do |comment| %>
+<li id='comunilist'><%= comment.comment %></li>
+<br>
 <%end %>
 </ul>
