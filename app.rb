@@ -18,7 +18,14 @@ end
 
 # Define routes below
 get '/' do
-  @comments = Comment.all
+  if (current_user)
+    authenticate_user
+    @user = current_user
+    @user = User.find_by_id(params[:id])
+    @comments = Comment.all
+  else
+    @comments = Comment.all
+  end
   erb :index
 end
 
@@ -42,19 +49,6 @@ post '/signUp' do
     username: username,
     password: password,
     email: email)
-    # break if user.nil?
-    # break if user.nil?
-    # break if f_name.nil?
-    # break if l_name.nil?
-    # break if username.nil?
-    # break if password.nil?
-    # break if email.nil?
-     # if user.nil? break
-     # if f_name.nil?   break
-     # if l_name.nil?  break
-     # if username.nil? break
-     # if password.nil?  break
-     # if email.nil?  break
  session[:user_id] = user.id
   redirect "/users/#{current_user.id}"
 end
@@ -67,9 +61,14 @@ get '/users/:id' do
   erb :'users/accountInfo'
 end
 
+get '/profile' do
+  @user = User.find_by_id(session[:user_id])
+  erb :'users/profile'
+end
+
 post '/pageContent' do
   @comment = Comment.create(comment: params[:textBox])
-redirect :'pageContent'
+  redirect '/pageContent'
 end
 
 
