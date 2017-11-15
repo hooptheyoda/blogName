@@ -6,6 +6,8 @@ ul {
 color: white;
 }
 
+/* ======== Body ============ */
+
 body {
   margin: 0 auto;
   background-image: url("../img/Gamers Talk Bravo!.jpg");
@@ -26,6 +28,7 @@ body {
   color: #ffbd4a;
 }
 
+/* ======== Header ============ */
 header {
   margin-top: 20px;
   width: 100%;
@@ -35,6 +38,7 @@ header {
   margin-left: 40%;
 }
 
+/* ======== Header Buttons ============ */
 button {
   margin-left: 10px;
   background: linear-gradient(black,#f1f1f1);
@@ -115,7 +119,7 @@ background-color: #f1f1f1;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-
+/* ======== HomePage (Index) ============ */
 /* image slide show */
 .slideshow {
   display: block;
@@ -160,12 +164,25 @@ border-radius: 15px;
 
 }
 
+/* ======== Profile ============ */
+.commP {
+  float: right;
+  width: 40%;
+}
+.containImg {
+  float: left;
+  width: calc(100% - 40%);
+  text-align: center;
+  color: #ffbd4a;
+}
 
-
+/* ======== Hidden ============ */
  .hidden {
    display: none;
  }
 
+
+/* ======== Content Page ============ */
 #lust {
   border: 2px solid white;
 }
@@ -178,7 +195,6 @@ font-family: verdana;
 color: white;
 background-color: #229a9f;
 }
-
 
 #list:hover {
 color: white;
