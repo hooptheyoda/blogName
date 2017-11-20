@@ -13,6 +13,11 @@
 </div>
 
 <div class="commP">
-  <p>Hi everyone!!!!!</p>
-  
+  <%  @comment.comment.find_by_id(params[:id]) do |c, i| %>
+        <% if (i < 10) %>
+          <div class="box"><%= c.comment %></div>
+        <% end %>
+
+   <% end %>
+
 </div>

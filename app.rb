@@ -63,6 +63,7 @@ end
 
 get '/profile' do
   @user = User.find_by_id(session[:user_id])
+ @comment = Comment.find_by_id(params[:id])
   erb :'users/profile'
 end
 
